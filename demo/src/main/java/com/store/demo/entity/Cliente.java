@@ -20,6 +20,7 @@ public class Cliente {
 
     private String tel;
 
+    @OneToOne
     private Endereco endereco;
 
 }
