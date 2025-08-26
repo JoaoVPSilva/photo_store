@@ -30,3 +30,7 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 #docker build -t spring-demo .
 #docker build --no-cache -t spring-demo .
 #docker run -p 8080:8080 spring-demo
+
+
+#NATUCCI
+#sudo docker compose up --build
