@@ -10,15 +10,21 @@ public class Endereco {
     private Long id;
 
     @Column(nullable = false)
+    private Long clienteId;
+
+    @Column(nullable = false)
     private String cep;
 
     @Column(nullable = false)
     private String rua;
 
     @Column(nullable = true)
-    private String numero;
+    private String numeroCasa;
 
     @Column(nullable = true)
     private String referencia;
+
+    @Column(nullable = false)
+    private String uf;
 
 }

@@ -20,6 +20,8 @@ public class Cliente {
 
     private String tel;
 
+    private String tokenAuth;
+
     @OneToOne
     private Endereco endereco;
 
