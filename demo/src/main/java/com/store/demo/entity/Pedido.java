@@ -12,11 +12,8 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long idCarrinho;
-
-    @Column(nullable = false)
-    private Long idCliente;
+    @OneToOne
+    private Carrinho carrinho;
 
     @Column(nullable = false)
     private Date dataPedido;

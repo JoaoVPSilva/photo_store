@@ -27,10 +27,10 @@ public class Produto {
     private String tipo; //ver de criar os tipos no enum se pa
 
     @Column(nullable = true) // ver se vai ser false mesmo
-    private Integer quantidadeEstoque;
+    private Integer qntdEstoque;
 
     @Column(nullable = false)
-    private Integer quantidadeAvaliacoes;
+    private Integer qntdAvaliacoes;
 
     @Column(nullable = false)
     private Boolean produtoAtivo;

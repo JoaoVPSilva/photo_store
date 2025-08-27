@@ -12,16 +12,13 @@ public class HistoricoPagamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long idPedido;
+    @OneToOne
+    private Pedido pedido;
 
-    @Column(nullable = false)
-    private Long idCliente;
-
-    @Column(nullable = false)
+    @Column(nullable = false) // isso aqui tem que ser enum?
     private String formaPagamento;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // enum?
     private String StatusPedido;
 
     @Column(nullable = false)
@@ -33,6 +30,6 @@ public class HistoricoPagamento {
     @Column(nullable = true)
     private Integer qntParcelas;
 
-    @Column(nullable = true) // tem que ver isso ai
+    @Column(nullable = true)
     private Date dataPagamento;
 }

@@ -5,14 +5,14 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Avaliacoes {
+public class Avaliacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long produtoId;
+    @ManyToOne
+    private Cliente cliente;
 
     @Column(nullable = false)
     private String titulo;
@@ -25,4 +25,7 @@ public class Avaliacoes {
 
     @Column(nullable = false)
     private Date dataAvaliacao;
+
+    @ManyToOne
+    private Produto produto;
 }
