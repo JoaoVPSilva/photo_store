@@ -1,5 +1,7 @@
 package com.store.demo.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -18,11 +20,12 @@ public class Cliente {
     @Column(nullable = false)
     private String psw;
 
+    @Column(nullable = false)
     private String tel;
 
+    @Column(nullable = false)
     private String tokenAuth;
 
-    @OneToOne
-    private Endereco endereco;
-
+    @OneToMany
+    private List<Endereco> endereco;
 }

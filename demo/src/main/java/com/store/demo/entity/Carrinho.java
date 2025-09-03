@@ -1,5 +1,7 @@
 package com.store.demo.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -12,7 +14,6 @@ public class Carrinho {
     @ManyToOne
     private Cliente cliente;
 
-    @OneToOne
-    private Produto produto;
-
+    @OneToMany
+    private List<ItensCarrinho> itensCarrinho;
 }
