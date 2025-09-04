@@ -19,8 +19,12 @@ import com.store.demo.enums.UserRole;
 import com.store.demo.infra.security.TokenService;
 import com.store.demo.service.UserService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("auth")
+@Tag(name = "Autenticação", description = "Controller responsável por autenticar usuários")
 public class AuthController {
 
     @Autowired
@@ -33,6 +37,7 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping("/login")
+    @Operation(summary = "Login a partir de e-mail e senha", description = "Retorna token JWT de um usuário logado")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody AuthDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
@@ -43,6 +48,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
+    @Operation(summary = "Registro de novos usuários", description = "Cadastra usuário no banco de dados")
     public ResponseEntity<?> register(@RequestBody RegisterDTO data) {
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.psw());
