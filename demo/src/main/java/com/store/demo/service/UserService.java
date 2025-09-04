@@ -3,6 +3,7 @@ package com.store.demo.service;
 import com.store.demo.entity.User;
 import com.store.demo.repository.UserRepository;
 
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +27,11 @@ public class UserService {
         return userRepo.findAll();
     }
 
+    public void save(User user) {
+        if (getUserByEmail(user.getEmail()) != null) {
+            throw new DuplicateKeyException("Usuário com esse e-mail já existe");
+        }
+
+        userRepo.save(user);
+    }
 }

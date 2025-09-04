@@ -20,6 +20,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "users")  
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,13 +40,16 @@ public class User implements UserDetails {
     private String tel;
 
     @Column(nullable = false)
-    private String tokenAuth;
-
-    @Column(nullable = false)
     private UserRole role;
 
     @OneToMany
     private List<Endereco> endereco;
+
+    public User(String email, String nome, String psw, String tel, UserRole role) {
+        this.email = email;
+        this.psw = psw;
+        this.role = role;
+    }
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
