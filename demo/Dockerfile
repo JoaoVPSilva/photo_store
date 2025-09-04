@@ -21,7 +21,6 @@ WORKDIR /app
 # Copiar o JAR gerado na etapa anterior
 COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 
-
 # Expor a porta
 EXPOSE 8080
 
