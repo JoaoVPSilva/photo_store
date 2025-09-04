@@ -12,7 +12,7 @@ public class Carrinho {
     private Long id;
 
     @ManyToOne
-    private Cliente cliente;
+    private User cliente;
 
     @OneToMany
     private List<ItensCarrinho> itensCarrinho;
