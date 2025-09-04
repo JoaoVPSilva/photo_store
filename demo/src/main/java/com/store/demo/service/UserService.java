@@ -3,6 +3,7 @@ package com.store.demo.service;
 import com.store.demo.entity.User;
 import com.store.demo.repository.UserRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    @Autowired
     private UserRepository userRepo;
 
     public Optional<User> getUserById(Long id){

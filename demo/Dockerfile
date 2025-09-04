@@ -34,3 +34,7 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 #NATUCCI
 #sudo docker compose up --build
+
+
+# Pra conectar no docker
+# sudo docker exec -it loja-postgres psql -U lojauser lojadb
