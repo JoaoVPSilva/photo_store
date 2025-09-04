@@ -2,6 +2,8 @@ package com.store.demo.service;
 
 import com.store.demo.entity.User;
 import com.store.demo.repository.UserRepository;
+
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,10 @@ public class UserService {
 
     public Optional<User> getUserById(Long id){
         return userRepo.findById(id);
+    }
+
+    public UserDetails getUserByEmail(String email){
+        return userRepo.findByEmail(email);
     }
 
     public List<User> getAllUsers(){

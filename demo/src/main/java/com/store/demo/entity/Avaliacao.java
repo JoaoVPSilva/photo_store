@@ -12,7 +12,7 @@ public class Avaliacao {
     private Long id;
 
     @ManyToOne
-    private Cliente cliente;
+    private User user;
 
     @Column(nullable = false)
     private String titulo;
